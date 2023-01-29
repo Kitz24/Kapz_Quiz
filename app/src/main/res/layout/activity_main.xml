@@ -6,86 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/nameInputField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/passWordInputField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+    <ImageView
+        android:id="@+id/welcomeImage"
+        android:layout_width="314dp"
+        android:layout_height="179dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/welcomeimagedescription"
+        app:layout_constraintEnd_toEndOf="@+id/welcomeMessage"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="@+id/welcomeMessage"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeMessage"
+        app:srcCompat="@drawable/c88izyeo7g_1" />
 
-    <EditText
-        android:id="@+id/passWordInputField"
+    <TextView
+        android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:ems="10"
-        android:hint="Enter Password"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="monospace"
+        android:text="@string/welcome_to_kapzquiz"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/emailInputField"
+    <Button
+        android:id="@+id/normalQuizButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter email"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passWordInputField" />
-
-    <TextView
-        android:id="@+id/firstViewField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/secondViewField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/secondViewField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="43dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/thirdViewField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/thirdViewField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailInputField" />
+        android:layout_marginTop="64dp"
+        android:onClick="onClickNormalQuiz"
+        android:text="@string/start_normal_quiz"
+        app:layout_constraintEnd_toEndOf="@+id/welcomeImage"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/welcomeImage"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeImage" />
 
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/rapidQuizButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onClickBtn"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/firstViewField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailInputField" />
+        android:layout_marginTop="64dp"
+        android:onClick="onClickRapidQuiz"
+        android:text="@string/start_rapid_quiz"
+        app:layout_constraintEnd_toEndOf="@+id/normalQuizButton"
+        app:layout_constraintStart_toStartOf="@+id/normalQuizButton"
+        app:layout_constraintTop_toBottomOf="@+id/normalQuizButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.kapzquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -19,23 +20,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClickBtn(View view){
-        EditText nameInput = findViewById(R.id.nameInputField);
-        EditText passwordInput = findViewById(R.id.passWordInputField);
-        EditText emailInput = findViewById(R.id.emailInputField);
-
-        String nameOutput = String.valueOf(nameInput.getText());
-        String passwordOutput = String.valueOf(passwordInput.getText());
-        String emailOutput = String.valueOf(emailInput.getText());
-
-        TextView nameView = findViewById(R.id.firstViewField);
-        TextView passwordView = findViewById(R.id.secondViewField);
-        TextView emailView = findViewById(R.id.thirdViewField);
-
-        nameView.setText(nameOutput);
-        passwordView.setText(passwordOutput);
-        emailView.setText(emailOutput);
-
+    public void onClickNormalQuiz(View view){
+        Intent intent = new Intent(MainActivity.this,TopicSelectActivity.class);
+        startActivity(intent);
+    }
+    public void onClickRapidQuiz(View view){
+        finish();
+        System.exit(0);
     }
 
 }
+// TODO: add button to view questions and one to display notes
