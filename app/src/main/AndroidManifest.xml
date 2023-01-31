@@ -12,6 +12,9 @@
         android:theme="@style/Theme.KapzQuiz"
         tools:targetApi="31">
         <activity
+            android:name=".QuestionPage"
+            android:exported="false" />
+        <activity
             android:name=".TopicSelectActivity"
             android:exported="false" />
         <activity
