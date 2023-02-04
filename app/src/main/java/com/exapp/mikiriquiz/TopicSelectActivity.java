@@ -1,4 +1,4 @@
-package com.example.kapzquiz;
+package com.exapp.mikiriquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 

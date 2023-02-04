@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.kapzquiz'
+    namespace 'com.exapp.mikiriquiz'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.kapzquiz"
+        applicationId "com.exapp.mikiriquiz"
         minSdk 22
         targetSdk 33
         versionCode 1

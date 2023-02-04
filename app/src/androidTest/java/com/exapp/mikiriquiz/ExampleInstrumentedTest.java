@@ -1,4 +1,4 @@
-package com.example.kapzquiz;
+package com.exapp.mikiriquiz;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.kapzquiz", appContext.getPackageName());
+        assertEquals("com.exapp.mikiriquiz", appContext.getPackageName());
     }
 }
