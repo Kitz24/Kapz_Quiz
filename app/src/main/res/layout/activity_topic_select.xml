@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TopicSelectActivity">
+
+    <ImageButton
+        android:id="@+id/buttonBook1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:contentDescription="@string/welcomeimagedescription"
+        android:onClick="onClickbook"
+        app:layout_constraintStart_toStartOf="@+id/selectBookHeader"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/solo_leveling__1_" />
+
+    <TextView
+        android:id="@+id/selectBookHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Select Book for Quiz"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonBook2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:contentDescription="@string/welcome_to_kapzquiz"
+        android:onClick="onClickbook"
+        app:layout_constraintEnd_toEndOf="@+id/selectBookHeader"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/solo_leveling__1_" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="Sample Book1"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBook2"
+        app:layout_constraintStart_toStartOf="@+id/buttonBook1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="SampleBook2"
+        app:layout_constraintEnd_toEndOf="@+id/buttonBook2"
+        app:layout_constraintStart_toEndOf="@+id/buttonBook1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
