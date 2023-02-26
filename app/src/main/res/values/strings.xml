@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Mikiri Quiz</string>
-    <string name="start_rapid_quiz">  Start Rapid Quiz  </string>
+    <string name="start_rapid_quiz">  Create Custom Quiz  </string>
     <string name="start_normal_quiz">Start Normal Quiz</string>
     <string name="welcome_to_kapzquiz">Welcome to MikiriQuiz!</string>
     <string name="welcomeimagedescription">welcomeImageDescription</string>
     <string name="title_activity_question_page">QuestionPage</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="add">Add</string>
 </resources>
