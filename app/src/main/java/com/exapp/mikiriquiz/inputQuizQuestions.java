@@ -15,9 +15,8 @@ public class inputQuizQuestions extends AppCompatActivity {
     }
 
     public void func(){
-        TextView t = findViewById(R.id.titleInput);
         Bundle bundle = getIntent().getExtras();
         String stuff = bundle.getString("quizTitle");
-        t.setText(stuff);
+        int numOfquestions = Integer.parseInt(bundle.getString("noOfQns"));
     }
 }
