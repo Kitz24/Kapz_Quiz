@@ -27,7 +27,7 @@ public class actualCustomQuizPage extends AppCompatActivity {
     int correctOption;
     RadioButton[] option = new RadioButton[4];
     TextView questionBox;
-    RadioGroup rd = findViewById(R.id.radioGroup3);
+    RadioGroup rd;
 
     @SuppressLint("Range")
     @Override
@@ -39,6 +39,7 @@ public class actualCustomQuizPage extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String selectedTitle = String.valueOf(bundle.getString("titlekey"));
         result = db.getQuizData(selectedTitle);
+        rd = findViewById(R.id.radioGroup3);
         questionBox = findViewById(R.id.textView6);
         option[0] = findViewById(R.id.radioButton1);
         option[1] = findViewById(R.id.radioButton2);
@@ -47,7 +48,6 @@ public class actualCustomQuizPage extends AppCompatActivity {
 
         if(result.getCount()==0){
             Toast.makeText(this,"No entry found", Toast.LENGTH_SHORT).show();
-            return;
         }
         else{
             if (result.moveToFirst()) {
