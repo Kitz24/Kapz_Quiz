@@ -16,14 +16,33 @@ import android.widget.Toast;
 public class SelectCustomQuiz extends AppCompatActivity {
 
     Spinner spinner;
+    DBHelper DB = new DBHelper(this);
 
+    @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_custom_quiz);
 
         //drop down menu starts here
-        String[] spinnerArray = {"1","2"};
+        
+        Cursor result = DB.getData();
+        int noOfTitles = result.getCount();
+        String[] spinnerArray = new String[noOfTitles];
+
+        if(result.getCount()==0){
+            Toast.makeText(this,"No entry found", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else {
+            int i=0;
+            if (result.moveToFirst()) {
+              do {
+                    spinnerArray[i] = result.getString(result.getColumnIndex("title"));
+                    i++;
+               } while (result.moveToNext());
+            }
+        }
 
         spinner = findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
@@ -38,24 +57,26 @@ public class SelectCustomQuiz extends AppCompatActivity {
     public void goToSelectedDropDownQuiz(View view){
         Button goButton = findViewById(R.id.goBtn);
         String text = spinner.getSelectedItem().toString();
-        int num = Integer.parseInt(text);
-        DBHelper DB = new DBHelper(this);
-        Cursor result = DB.getData(num);
-        if(result.getCount()==0){
-            Toast.makeText(this,"No entry found", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
-        String variable1 = "";
-        if(result.moveToFirst()){
-            do{
-                variable1 = variable1 + result.getString(result.getColumnIndex("questionNo"));
-
-            }while (result.moveToNext());
-            TextView tv = findViewById(R.id.textView5);
-            tv.setText(variable1);
-        }
-
+        //Cursor result = DB.getData();
+        //if(result.getCount()==0){
+        //    Toast.makeText(this,"No entry found", Toast.LENGTH_SHORT).show();
+        //    return;
+        //}
+        //else {
+        //    String variable1 = "";
+        //    if (result.moveToFirst()) {
+        //        do {
+        //            variable1 = variable1 + result.getString(result.getColumnIndex("title"));
+//
+        //        } while (result.moveToNext());
+        //        TextView tv = findViewById(R.id.textView5);
+        //        tv.setText(variable1);}}
+        Intent intent = new Intent(SelectCustomQuiz.this, actualCustomQuizPage.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("titlekey",text);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     public void onClickAddQuiz (View view) {

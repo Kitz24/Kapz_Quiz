@@ -42,6 +42,7 @@
         android:layout_marginTop="64dp"
         android:onClick="onClickNormalQuiz"
         android:text="@string/start_normal_quiz"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/welcomeImage"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/welcomeImage"
@@ -51,10 +52,11 @@
         android:id="@+id/customQuizButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="196dp"
         android:onClick="onClickCustomQuiz"
         android:text="@string/start_rapid_quiz"
         app:layout_constraintEnd_toEndOf="@+id/normalQuizButton"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="@+id/normalQuizButton"
         app:layout_constraintTop_toBottomOf="@+id/normalQuizButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
